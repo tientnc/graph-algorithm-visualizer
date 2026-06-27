@@ -3,7 +3,7 @@ import { Graph } from '../types';
 export const PRESETS: Record<string, { name: string; graph: Graph; startNode: string; endNode: string; description: string }> = {
   weighted: {
     name: 'Weighted Network (Dijkstra/Prim)',
-    description: 'A classic test graph with multiple alternative routes of different weights.',
+    description: 'Multiple alternative routes of different weights.',
     startNode: 'A',
     endNode: 'F',
     graph: {
@@ -30,7 +30,7 @@ export const PRESETS: Record<string, { name: string; graph: Graph; startNode: st
   },
   pathfinding: {
     name: 'Coordinate Map (A* Search)',
-    description: 'A map styled with physical positions where A* heuristics shine compared to Dijkstra.',
+    description: 'A* heuristics vs Dijkstra.',
     startNode: 'S',
     endNode: 'G',
     graph: {
@@ -58,7 +58,7 @@ export const PRESETS: Record<string, { name: string; graph: Graph; startNode: st
   },
   negative: {
     name: 'Negative Cycle (Bellman-Ford)',
-    description: 'Contains a negative weight cycle. Useful for demonstrating the limitations of Dijkstra.',
+    description: 'Demonstrating limitations of Dijkstra.',
     startNode: '1',
     endNode: '4',
     graph: {
@@ -79,7 +79,7 @@ export const PRESETS: Record<string, { name: string; graph: Graph; startNode: st
   },
   binaryTree: {
     name: 'Binary Search Tree',
-    description: 'Perfect for comparing depth-first traversal (DFS) vs breadth-first traversal (BFS).',
+    description: 'Perfect for comparing DFS vs BFS.',
     startNode: 'R',
     endNode: 'L2',
     graph: {
