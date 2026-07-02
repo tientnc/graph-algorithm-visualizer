@@ -290,12 +290,12 @@ export const generateDijkstra = (graph: Graph, startNodeId: string, endNodeId?: 
     let currentId: string | null = null;
     let minDistance = Infinity;
 
-    unvisited.forEach((id) => {
+    for (const id of unvisited) {
       if (distances[id] < minDistance) {
         minDistance = distances[id];
         currentId = id;
       }
-    });
+    }
 
     if (currentId === null || minDistance === Infinity) {
       break;
@@ -424,12 +424,12 @@ export const generateAStar = (graph: Graph, startNodeId: string, endNodeId: stri
     let currentId: string | null = null;
     let minF = Infinity;
 
-    openSet.forEach((id) => {
+    for (const id of openSet) {
       if (fScore[id] < minF) {
         minF = fScore[id];
         currentId = id;
       }
-    });
+    }
 
     if (currentId === null) break;
 
@@ -745,7 +745,7 @@ export const generatePrim = (graph: Graph, startNodeId: string): VisualizationSt
     let nextNodeId = '';
 
     // Find cut-crossing edge with minimum weight
-    graph.edges.forEach((edge) => {
+    for (const edge of graph.edges) {
       const u = edge.source;
       const v = edge.target;
 
@@ -760,7 +760,7 @@ export const generatePrim = (graph: Graph, startNodeId: string): VisualizationSt
           nextNodeId = uIn ? v : u;
         }
       }
-    });
+    }
 
     if (!minEdge) {
       // Graph is disconnected
